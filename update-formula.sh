@@ -26,29 +26,29 @@ echo "SHA256 (aarch64): ${SHA256_AARCH64}"
 echo "Navigating to the Formula directory..."
 cd Formula || exit
 
-echo "Updating URLs and SHA256s in forge.rb..."
+echo "Updating URLs and SHA256s in code-forge.rb..."
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS uses a different syntax for 'sed -i'
-    sed -i '' -e "/if Hardware::CPU.intel?/,/elsif Hardware::CPU.arm?/ s|url \".*\"|url \"${URL_X86_64}\"|" forge.rb
-    sed -i '' -e "/if Hardware::CPU.intel?/,/elsif Hardware::CPU.arm?/ s|sha256 \".*\"|sha256 \"${SHA256_X86_64}\"|" forge.rb
-    sed -i '' -e "/elsif Hardware::CPU.arm?/,/end/ s|url \".*\"|url \"${URL_AARCH64}\"|" forge.rb
-    sed -i '' -e "/elsif Hardware::CPU.arm?/,/end/ s|sha256 \".*\"|sha256 \"${SHA256_AARCH64}\"|" forge.rb
-    sed -i '' -e "s|version \".*\"|version \"${TAG_NAME}\"|" forge.rb
+    sed -i '' -e "/if Hardware::CPU.intel?/,/elsif Hardware::CPU.arm?/ s|url \".*\"|url \"${URL_X86_64}\"|" code-forge.rb
+    sed -i '' -e "/if Hardware::CPU.intel?/,/elsif Hardware::CPU.arm?/ s|sha256 \".*\"|sha256 \"${SHA256_X86_64}\"|" code-forge.rb
+    sed -i '' -e "/elsif Hardware::CPU.arm?/,/end/ s|url \".*\"|url \"${URL_AARCH64}\"|" code-forge.rb
+    sed -i '' -e "/elsif Hardware::CPU.arm?/,/end/ s|sha256 \".*\"|sha256 \"${SHA256_AARCH64}\"|" code-forge.rb
+    sed -i '' -e "s|version \".*\"|version \"${TAG_NAME}\"|" code-forge.rb
 else
     # For Linux
-    sed -i "/if Hardware::CPU.intel?/,/elsif Hardware::CPU.arm?/ s|url \".*\"|url \"${URL_X86_64}\"|" forge.rb
-    sed -i "/if Hardware::CPU.intel?/,/elsif Hardware::CPU.arm?/ s|sha256 \".*\"|sha256 \"${SHA256_X86_64}\"|" forge.rb
-    sed -i "/elsif Hardware::CPU.arm?/,/end/ s|url \".*\"|url \"${URL_AARCH64}\"|" forge.rb
-    sed -i "/elsif Hardware::CPU.arm?/,/end/ s|sha256 \".*\"|sha256 \"${SHA256_AARCH64}\"|" forge.rb
-    sed -i "s|version \".*\"|version \"${TAG_NAME}\"|" forge.rb
+    sed -i "/if Hardware::CPU.intel?/,/elsif Hardware::CPU.arm?/ s|url \".*\"|url \"${URL_X86_64}\"|" code-forge.rb
+    sed -i "/if Hardware::CPU.intel?/,/elsif Hardware::CPU.arm?/ s|sha256 \".*\"|sha256 \"${SHA256_X86_64}\"|" code-forge.rb
+    sed -i "/elsif Hardware::CPU.arm?/,/end/ s|url \".*\"|url \"${URL_AARCH64}\"|" code-forge.rb
+    sed -i "/elsif Hardware::CPU.arm?/,/end/ s|sha256 \".*\"|sha256 \"${SHA256_AARCH64}\"|" code-forge.rb
+    sed -i "s|version \".*\"|version \"${TAG_NAME}\"|" code-forge.rb
 fi
 
 echo "Committing and pushing updates..."
 
 git config user.name "GitHub Actions"
 git config user.email "actions@github.com"
-git commit -am "Update Forge CLI version: ${TAG_NAME}"
+git commit -am "Update Code-Forge CLI version: ${TAG_NAME}"
 git push
 
 echo "Update completed successfully!"
