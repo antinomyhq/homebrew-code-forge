@@ -1,5 +1,5 @@
-class Codeforge < Formula
-  desc "CodeForge CLI - A powerful tool for managing your code workflow"
+class Forge < Formula
+  desc "Forge CLI - A powerful tool for managing your code workflow"
   homepage "https://example.com"
   version "0.1.0"
   
