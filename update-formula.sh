@@ -10,8 +10,8 @@ fi
 echo "Setting up variables..."
 
 BASE_URL="https://release-download.tailcall.workers.dev/download/${TAG_NAME}"
-URL_X86_64="${BASE_URL}/forge-x86_64-apple-darwin.tar.gz"
-URL_AARCH64="${BASE_URL}/forge-aarch64-apple-darwin.tar.gz"
+URL_X86_64="${BASE_URL}/forge-x86_64-apple-darwin"
+URL_AARCH64="${BASE_URL}/forge-aarch64-apple-darwin"
 
 echo "Fetching SHA256 checksums..."
 

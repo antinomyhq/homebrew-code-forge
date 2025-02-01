@@ -5,11 +5,11 @@ class CodeForge < Formula
   
   # Based on the architecture, set the URL
   if Hardware::CPU.intel?
-    url "https://release-download.tailcall.workers.dev/download/v0.1.2/forge-x86_64-apple-darwin.tar.gz"
-    sha256 "fa906026d7061c8331cdb6d442a34d01aa3162424d52aadc7604d6508e195903"
+    url "https://release-download.tailcall.workers.dev/download/v0.1.2/forge-x86_64-apple-darwin"
+    sha256 "b22904bebe61c57e24d8ccc529382d4dc2d4906bc32113cf89c9093dae8dd9f0"
   elsif Hardware::CPU.arm?
-    url "https://release-download.tailcall.workers.dev/download/v0.1.2/forge-aarch64-apple-darwin.tar.gz"
-    sha256 "fa906026d7061c8331cdb6d442a34d01aa3162424d52aadc7604d6508e195903"
+    url "https://release-download.tailcall.workers.dev/download/v0.1.2/forge-aarch64-apple-darwin"
+    sha256 "e446e070b408c8f52f0b73187b820ccd2e297adc2bc7da602a7b81ca9ef5cb82"
   end
 
   def install
