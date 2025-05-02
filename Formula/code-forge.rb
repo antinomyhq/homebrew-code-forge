@@ -1,15 +1,15 @@
 class CodeForge < Formula
   desc "CodeForge CLI - A powerful tool for managing your code workflow"
   homepage "https://example.com"
-  version "v0.83.2"
+  version "v0.84.0"
   
   # Based on the architecture, set the URL
   if Hardware::CPU.intel?
-    url "https://release-download.tailcall.workers.dev/download/v0.83.2/forge-x86_64-apple-darwin"
-    sha256 "b68a9fd363e7b325f72023746069a77c19124da2eb99f95b69874e30cace661f"
+    url "https://release-download.tailcall.workers.dev/download/v0.84.0/forge-x86_64-apple-darwin"
+    sha256 "282fa6094fbbd41d7ae00f1e6c4a3f8e84c9537b472c0ae3ca016564a69b732a"
   elsif Hardware::CPU.arm?
-    url "https://release-download.tailcall.workers.dev/download/v0.83.2/forge-aarch64-apple-darwin"
-    sha256 "1f7598a981e8581128abe41df4308beee3346776cac7ef3d24c6e3b27797ffeb"
+    url "https://release-download.tailcall.workers.dev/download/v0.84.0/forge-aarch64-apple-darwin"
+    sha256 "331ca2d407c0117b1985565fb47f3ede66a33e685e22f36e4b487f23f42cec73"
   end
 
   def install
